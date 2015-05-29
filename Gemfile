@@ -10,6 +10,8 @@ gem 'sprockets', '~> 2.2'
 gem 'browserify-rails', '~> 0.7'
 gem 'react-rails'
 
+gem 'devise'
+
 group :development, :test do
   gem 'byebug'
   gem 'rspec-rails'
