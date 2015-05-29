@@ -9,6 +9,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'sprockets', '~> 2.2'
 gem 'browserify-rails', '~> 0.7'
 gem 'react-rails'
+gem 'bootstrap-sass'
+gem 'font-awesome-rails'
 
 gem 'devise'
 
