@@ -28,7 +28,17 @@
           </li>
         </ul>
       <% end %>
+    </div>
+  </div>
 
+  <% flash.each do |name, msg| %>
+    <div class='container'>
+      <div class="alert">
+        <button class="close" data-dismiss="alert">&times;</button>
+        <%= msg %>
+      </div>
+    </div>
+  <% end %>
 <%= yield %>
 
 </body>

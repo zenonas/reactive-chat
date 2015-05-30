@@ -5,12 +5,12 @@ feature 'Sign in' do
 
   scenario 'can sign in through the front end' do
     visit '/'
-    within '#navbar' do
-      fill_in 'Email', with: user.email
-      fill_in 'Password', with: 'fakepassword'
-    end
-    click_on 'Sign in'
-    expect(page).to have_content 'Success'
+    fill_in 'Email', with: user.email
+    fill_in 'Password', with: 'fakepassword'
+    debugger
 
+    click_on 'Sign in'
+
+    expect(page).to have_content 'Signed in successfully.'
   end
 end
