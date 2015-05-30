@@ -17,6 +17,11 @@ gem 'devise'
 group :development, :test do
   gem 'byebug'
   gem 'rspec-rails'
+  gem 'capybara'
+  gem 'capybara-screenshot'
+  gem 'factory_girl_rails'
+  gem 'faker'
+  gem 'poltergeist'
   gem 'web-console', '~> 2.0'
   gem 'spring'
 end

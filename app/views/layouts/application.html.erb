@@ -7,6 +7,27 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div id='navbar' class='navbar navbar-default'>
+    <div class='container-fluid'>
+      <div class='navbar-header'>
+        <a class='navbar-brand' href='/'>Reactive Chat</a>
+      </div>
+      <% if user_signed_in? %>
+        <ul class='nav navbar-nav navbar-right'>
+          <li>
+            <a href='#'><%= current_user.email %></a>
+          </li>
+          <li>
+            <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+          </li>
+        </ul>
+      <% else %>
+        <ul class='nav navbar-nav navbar-right'>
+          <li>
+            Foo
+          </li>
+        </ul>
+      <% end %>
 
 <%= yield %>
 

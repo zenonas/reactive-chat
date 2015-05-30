@@ -3,13 +3,17 @@
   "dependencies": {
     "alt": "^0.16.6",
     "babelify": "^6.1.2",
+    "bootstrap-sass": "^3.3.4",
     "browserify": "~> 10.2",
     "browserify-incremental": "~>3.0",
+    "jquery": "^2.1.4",
     "react": "^0.13.3",
     "react-tools": "^0.13.3"
   },
   "browserify": {
-    "transform": ["babelify"]
+    "transform": [
+      "babelify"
+    ]
   },
   "license": "MIT",
   "engines": {
