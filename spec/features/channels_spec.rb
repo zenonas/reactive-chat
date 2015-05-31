@@ -9,7 +9,7 @@ feature 'Channels' do
   end
 
   scenario 'a list of channels is displayed' do
-    visit '/'
+    visit root_path
     expect(page).to have_content channel.name
   end
 
