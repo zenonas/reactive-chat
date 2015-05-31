@@ -12,4 +12,10 @@ feature 'Channels' do
     visit '/'
     expect(page).to have_content channel.name
   end
+
+  scenario 'join a channel' do
+    visit channels_path(channel)
+    expect(page).to have_content "Channel: #{channel.name}"
+    expect(page).to have_content channel.description
+  end
 end
