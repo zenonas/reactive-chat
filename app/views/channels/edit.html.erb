@@ -1,8 +1,14 @@
-<div class='container'>
-  <h1>Editing Channel</h1>
-
-  <%= render 'form' %>
-
-  <%= link_to 'Show', @channel %> |
-  <%= link_to 'Back', channels_path %>
+<div class="col-sm-12">
+  <div class="page-header text-muted">
+    Edit Channel
+  </div>
+</div>
+<div class="row">
+  <div class='col-sm-8'>
+    <%= render 'form' %>
+  </div>
+  <div class='col-sm-4'>
+    <%= link_to 'Join', @channel, class: 'btn btn-default' %>
+    <%= link_to 'Back', channels_path, class: 'btn btn-default' %>
+  </div>
 </div>

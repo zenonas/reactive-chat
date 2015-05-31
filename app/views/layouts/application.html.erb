@@ -18,7 +18,7 @@
                       <%= link_to 'All Channels', channels_path %>
                     </li>
                     <li>
-                      <%= link_to 'New Channel', channels_path %>
+                      <%= link_to 'New Channel', new_channel_path %>
                     </li>
                   </ul>
                   <ul class="nav hidden-xs" id="sidebar-footer">
@@ -33,7 +33,7 @@
                   </ul>
               </div>
               <!-- /sidebar -->
-            
+
               <!-- main -->
               <div class="column col-sm-10" id="main">
                   <div class="padding">
@@ -47,7 +47,7 @@
                             </div>
                           </div>
                         <% end %>
-                        
+
                         <%= yield %>
                       </div>
                   </div>
