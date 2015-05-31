@@ -1,6 +1,5 @@
 FactoryGirl.define do
   factory :channel do
-    name "MyString"
+    name { Faker::Name.name }
   end
-
 end
