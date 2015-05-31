@@ -1,3 +1,14 @@
-<div class='container'>
-  <%= react_component('Chat', {channel: @channel}) %>
+<div class="col-sm-12">
+  <div class="page-header text-muted">
+    <%= @channel.name %> // <%= @channel.description %> 
+    <div class="pull-right">
+      <%= link_to 'Back', channels_path %>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-12">
+    <%= react_component('ChatWindow', {channel: @channel, user: current_user}) %>
+  </div>
 </div>

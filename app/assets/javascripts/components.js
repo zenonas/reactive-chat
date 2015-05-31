@@ -8,4 +8,4 @@ require('bootstrap');
 var React = require('react');
 window.React = React;
 
-Chat = window.Chat = require('./components/chat');
+window.ChatWindow = require('./components/chat_window');
