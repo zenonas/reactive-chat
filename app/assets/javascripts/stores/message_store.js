@@ -1,13 +1,11 @@
-import alt from 'alt';
+import alt from '../alt'
 import ChatServerActionCreators from '../actions/chat_server_action_creators';
 import ChatMessageActionCreators from '../actions/chat_message_action_creators';
-
-var ChatMessageDataUtils = require('../utils/ChatMessageDataUtils')
-var ChatMessageUtils = require('../utils/ChatMessageUtils')
+import ChatMessageDataUtils from '../utils/chat_message_data_utils'
+import ChatMessageUtils from '../utils/chat_message_utils'
 
 class MessageStore {
   constructor() {
-    this.bindActions(ChatThreadActionCreators)
     this.bindActions(ChatMessageActionCreators)
     this.bindActions(ChatServerActionCreators)
 
@@ -21,13 +19,6 @@ class MessageStore {
 
   onReceiveAll(rawMessages) {
     this._addMessages(rawMessages)
-    this.waitFor([ThreadStore.dispatchToken])
-    this._markAllInThreadRead(ThreadStore.getCurrentID())
-  }
-
-  onClickThread() {
-    this.waitFor([ThreadStore.dispatchToken])
-    this._markAllInThreadRead(ThreadStore.getCurrentID())
   }
 
   _addMessages(rawMessages) {
