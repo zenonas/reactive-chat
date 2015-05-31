@@ -1,24 +1,19 @@
-<div class='container'>
-  <h1>Channels</h1>
-
-  <%= link_to 'New Channel', new_channel_path, class: 'btn btn-default' %>
-  <table class='table table-hover'>
-    <thead>
-      <tr>
-        <th></th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @channels.each do |channel| %>
-        <tr>
-          <td><%= link_to 'Join Channel', channel, class: 'btn btn-default' %></td>
-          <td><%= channel.name %></td>
-          <td><%= channel.description %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+<div class="col-sm-12" id="featured">
+  <div class="page-header text-muted">
+  Channels
+  </div>
 </div>
+
+<% @channels.each do |channel| %>
+  <div class="row">
+    <div class="col-sm-2">
+      <h3>
+        <%= link_to raw("<span class='glyphicon glyphicon-log-in'></span>"), channel, class: 'pull-right btn btn-lg' %>
+      </h3>
+    </div>
+    <div class="col-sm-10">
+      <h3><%= channel.name %></h3>
+      <h4><%= channel.description %></h4>
+    </div>
+  </div>
+<% end -%>

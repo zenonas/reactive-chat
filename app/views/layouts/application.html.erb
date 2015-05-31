@@ -7,33 +7,53 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div id='navbar' class='navbar navbar-default'>
-    <div class='container-fluid'>
-      <div class='navbar-header'>
-        <a class='navbar-brand' href='/'>Reactive Chat</a>
+  <div class="wrapper">
+      <div class="box">
+          <div class="row">
+              <!-- sidebar -->
+              <div class="column col-sm-3" id="sidebar">
+                  <a class="logo" href="#">R</a>
+                  <ul class="nav">
+                    <li>
+                      <%= link_to 'All Channels', channels_path %>
+                    </li>
+                    <li>
+                      <%= link_to 'New Channel', channels_path %>
+                    </li>
+                  </ul>
+                  <ul class="nav hidden-xs" id="sidebar-footer">
+                    <% if user_signed_in? %>
+                      <li>
+                        <a href='#'><%= current_user.email %></a>
+                      </li>
+                      <li>
+                        <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+                      </li>
+                    <% end -%>
+                  </ul>
+              </div>
+              <!-- /sidebar -->
+            
+              <!-- main -->
+              <div class="column col-sm-9" id="main">
+                  <div class="padding">
+                      <div class="full col-sm-9">
+
+                        <% flash.each do |name, msg| %>
+                          <div class='col-sm-12'>
+                            <div class="alert">
+                              <button class="close" data-dismiss="alert">&times;</button>
+                              <%= msg %>
+                            </div>
+                          </div>
+                        <% end %>
+                        
+                        <%= yield %>
+                      </div>
+                  </div>
+              </div>
+          </div>
       </div>
-      <% if user_signed_in? %>
-        <ul class='nav navbar-nav navbar-right'>
-          <li>
-            <a href='#'><%= current_user.email %></a>
-          </li>
-          <li>
-            <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
-          </li>
-        </ul>
-      <% end -%>
-    </div>
   </div>
-
-  <% flash.each do |name, msg| %>
-    <div class='container'>
-      <div class="alert">
-        <button class="close" data-dismiss="alert">&times;</button>
-        <%= msg %>
-      </div>
-    </div>
-  <% end %>
-<%= yield %>
-
 </body>
 </html>
